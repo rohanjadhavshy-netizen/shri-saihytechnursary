@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="mr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Shri Sai Hytech Nursery </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+        
+        body {
+            font-family: Arial;
+            background: #FFF8E1;
+            color: #3e2723;
+            scroll-behavior: smooth
+        }
+        
+        
+        nav {
+            background: #4e342e;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100
+        }
+        
+        nav h1 {
+            color: #fff8e1;
+            font-size: 22px
+        }
+        
+        nav a {
+            color: #ffcc80;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+            cursor: pointer
+        }
+        
+        nav a:hover,
+        nav a.active {
+            color: white;
+            border-bottom: 2px solid #ff6f00
+        }
+        
+        .page {
+            display: none;
+            min-height: 80vh
+        }
+        
+        .page.active {
+            display: block
+        }
+        
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b');
+            background-size: cover;
+            text-align: center;
+            color: white;
+            padding: 140px 20px
+        }
+        
+        .hero h2 {
+            font-size: 50px
+        }
+        
+        .hero p {
+            margin: 20px;
+            background: #ff6f00;
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px
+        }
+        
+        .hero button {
+            background: #ff6f00;
+            color: white;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 30px;
+            font-size: 18px;
+            cursor: pointer
+        }
+        
+        
+        .box {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2)
+        }
+        
+        
+        .products {
+            background: #ffecb3;
+            padding: 30px 20px
+        }
+        
+        .container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px
+        }
+        
+        .card {
+            width: 260px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-bottom: 5px solid #ff6f00;
+            transition: 0.3s
+        }
+        
+        .card:hover {
+            transform: translateY(-8px)
+        }
+        
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            cursor: pointer
+        }
+        
+        .card-body {
+            padding: 15px;
+            text-align: center
+        }
+        
+        .card-body button {
+            background: #ff6f00;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer
+        }
+        
+        
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            padding: 30px
+        }
+        
+        .gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            cursor: pointer
+        }
+        
+        
+        .form {
+            max-width: 500px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2)
+        }
+        
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px
+        }
+        
+        .form button {
+            background: #ff6f00;
+            color: white;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer
+        }
+        
+        footer {
+            background: #212121;
+            color: #ffcc80;
+            text-align: center;
+            padding: 15px
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h1> Shri Sai Hytech Nursery </h1>
+        <div>
+            <a onclick="showPage('home')" id="link-home" class="active">Home</a>
+            <a onclick="showPage('about')" id="link-about">About</a>
+            <a onclick="showPage('plants')" id="link-plants">Plants</a>
+            <a onclick="showPage('gallery')" id="link-gallery">Gallery</a>
+            <a onclick="showPage('contact')" id="link-contact">Contact</a>
+        </div>
+    </nav>
+
+    
+    <div id="home" class="page active">
+        <div class="hero">
+            <h2> Shri Sai Hytech Nursery </h2><br>
+            <p> गुणवता आमची प्रगती तुमची </p><br><br>
+            <button onclick="showPage('plants')">View Our Plants</button>
+        </div>
+        <div style="text-align:center;padding:40px">
+            <h2 style="color:#bf360c">Welcome to our Nursery</h2>
+            <p style="max-width:600px;margin:15px auto;line-height:1.6">100+ प्रकारची झाडे योग्य दरात मिळतिल, Home Delivery उपलब्ध. अहमदपूर परिसरातील सर्वात मोठी हायटेक नर्सरी.</p>
+            <button onclick="showPage('about')" style="background:#4e342e;color:white;padding:10px 20px;border:none;border-radius:20px;cursor:pointer;margin-top:10px">Know More</button>
+        </div>
+    </div>
+
+    
+    <div id="about" class="page">
+        <div class="box">
+            <h2 style="color:#bf360c"> About Us </h2><br>
+            <p>आमची नर्सरी 2015 पासून कार्यरत आहे. आमच्याकडे फळ झाडे, फुल झाडे, शोभेची झाडे, औषधी वनस्पती आणि Organic खत मिळते.</p><br>
+            <p><b>Owner:</b> Kadam Pavan</p>
+            <p><b>Location:</b>At.Tambatsangvi Tq.Ahmedpur Dist. Latur - 413515</p>
+            <p><b>Experience:</b> 10+ Years</p>
+            <p><b>Speciality:</b> Mango, crops, flower, ornamental Plants</p><br>
+            <button onclick="showPage('contact')" style="background:#ff6f00;color:white;padding:10px 20px;border:none;border-radius:20px;cursor:pointer">Contact Us</button>
+        </div>
+    </div>
+
+    
+    <div id="plants" class="page">
+        <h2 style="text-align:center;padding:25px;color:#4e342e"> Our Plants Collection </h2>
+        <div class="container">
+            <div class="card"><img src="images (2).jpg" onclick="bigImage(this.src)">
+                <div class="card-body">
+                    <h3>रोपे </h3>
+                    <p>Rs. 100 Per Trey</p><button onclick="order('आंबा रोप - Rs 150')">Order on WhatsApp</button></div>
+            </div>
+            <div class="card"><img src="images (1).jpg" onclick="bigImage(this.src)">
+                <div class="card-body">
+                    <h3>फुल झाडे</h3>
+                    <p>Rs. 150 Per Tray</p><button onclick="order('फुलझाडे - Rs 50')">Order on WhatsApp</button></div>
+            </div>
+            <div class="card"><img src="https://images.unsplash.com/photo-1487530811176-3780de880c2d" onclick="bigImage(this.src)">
+                <div class="card-body">
+                    <h3> ओर्नामेंटल प्लांट्स </h3>
+                    <p>Rs. 300</p><button onclick="order('शोभेची झाडे - Rs 100')">Order on WhatsApp</button></div>
+            </div>
+            <div class="card"><img src="images3.jpg" onclick="bigImage(this.src)">
+                <div class="card-body">
+                    <h3>इ. रोप</h3>
+                    <p>Rs. 120</p><button onclick="order('इ.रोपे - Rs 120')">Order on WhatsApp</button></div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="gallery" class="page">
+        <h2 style="text-align:center;padding:25px;color:#4e342e">Our Nursery Gallery </h2>
+        <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b" onclick="bigImage(this.src)">
+            <img src="images (1).jpg" onclick="bigImage(this.src)">
+            <img src="images (2).jpg" onclick="bigImage(this.src)">
+            <img src="https://images.unsplash.com/photo-1459411552884-841db9b3cc2a " onclick="bigImage(this.src) ">
+            <img src="https://images.unsplash.com/photo-1487530811176-3780de880c2d " onclick="bigImage(this.src) ">
+            <img src="images3.jpg" onclick="bigImage(this.src) ">
+        </div>
+    </div>
+    
+    <div id="contact" class="page">
+        <div class="form">
+            <h2 style="color:#bf360c;text-align:center">Add - At.Tambatsangvi Tq.Ahmedpur, Dist. Latur - 413515</h2><br>
+            <p>Phone No.: +91 98XXX XXXXX</p><br>
+            <input type="text" id="name" placeholder="Your Name">
+            <input type="text" id="plant" placeholder="Which plant you want?">
+            <textarea id="msg" placeholder="Your Message"></textarea>
+            <button onclick="sendMsg()">Send on WhatsApp</button>
+            <br><br>
+            <button onclick="callNow()" style="background:#4e342e">Call Now</button>
+        </div>
+    </div>
+
+    <footer>© 2026 Created by Shri Sai Hytech Nursery| All Right Reserved | At.Tambatsangvi Tq.Ahmedpur , Dist. Latur - 413515 </footer>
+
+    <script>
+        
+        function showPage(pageName) {
+            
+            let pages = document.querySelectorAll('.page');
+            pages.forEach(p => p.classList.remove('active'));
+            
+            document.getElementById(pageName).classList.add('active');
+
+            
+            let links = document.querySelectorAll('nav a');
+            links.forEach(l => l.classList.remove('active'));
+            document.getElementById('link-' + pageName).classList.add('active');
+
+            window.scrollTo(0, 0);
+        }
+        medpur - 413515
+
+        function order(plantName) {
+            let phone = "9198XXXXXXX"; 
+            let text = "नमस्कार, मला " + plantName + " पाहिजे आहे. Ahmedpur Nursery";
+            window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(text), "_blank");
+        }
+
+        function bigImage(src) {
+            window.open(src, "_blank");
+        }
+
+        function sendMsg() {
+            let n = document.getElementById('name').value;
+            let p = document.getElementById('plant').value;
+            let m = document.getElementById('msg').value;
+            let text = "Name: " + n + " | Plant: " + p + " | Msg: " + m + " - Shri Sai Hytech Nursery";
+            window.open("https://wa.me/91xxXXXXXXX?text=" + encodeURIComponent(text), "_blank");
+        }
+
+        function callNow() {
+            alert("Call: +91 98xxxxxxxx - Shri Sai Hytech Nursery, Ahmedpur");
+        }
+    </script>
+
+</body>
+
+</html>
